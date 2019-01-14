@@ -1,0 +1,21 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="WebTestChallange" thread-count="2" parallel="tests" >
+    <listeners>
+        <listener class-name="/src/test/java/org/naic/mfl/se/challenge/scrListener/ScreenShotListener" />
+        <listener class-name="org.testng.reporters.EmailableReporter" />
+    </listeners>
+    <test name="ChromeBrowser" >
+        <parameter name="browser" value="Chrome"/>
+        <classes>
+            <class name="Tests/TestWebPages" />
+        </classes>
+    </test>
+
+    <test name="FireFox Browser">
+       <parameter name="browser" value="Firefox"/>
+        <classes>
+            <class name="Tests/TestWebPages" />
+        </classes>
+    </test>
+
+</suite>
