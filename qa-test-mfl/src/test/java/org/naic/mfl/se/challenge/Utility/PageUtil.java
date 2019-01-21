@@ -13,8 +13,8 @@ public class PageUtil {
         this.driver=driver;
     }
 
-    public WebElement waitForElementVisible(WebElement webElement, int timeOutSeconds){
+    public void waitForElementVisible(WebElement webElement, int timeOutSeconds){
         WebDriverWait wait=new WebDriverWait(driver,timeOutSeconds,50);
-        return( wait.until(ExpectedConditions.visibilityOf(webElement)));
+        wait.until(ExpectedConditions.visibilityOf(webElement));
     }
 }

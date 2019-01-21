@@ -2,13 +2,15 @@ package org.naic.mfl.se.challenge.Tests;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.naic.mfl.se.challenge.scrListener.ScreenShotListener;
+import org.naic.mfl.se.challenge.Pages.WelcomePage;
+import org.naic.mfl.se.challenge.ConfigUtil.BaseConfig;
+import org.naic.mfl.se.challenge.Utility.ScreenShotListener;
 import org.naic.mfl.se.challenge.Pages.CheckOutPage;
 import org.naic.mfl.se.challenge.Pages.LoginPage;
 import org.naic.mfl.se.challenge.Pages.SignInPage;
-import org.naic.mfl.se.challenge.Utility.DataUtil;
+import org.naic.mfl.se.challenge.Utility.ReadWriteExcel;
 import org.naic.mfl.se.challenge.Utility.UserInfo;
-import org.naic.mfl.se.challenge.logger.BaseLogger;
+import org.naic.mfl.se.challenge.Utility.BaseLogger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -29,136 +31,142 @@ public class TestWebPages {
     LoginPage loginPage;
     CheckOutPage checkOutPage;
     SignInPage signInPage;
-    UserInfo user1;
+    WelcomePage welcomePage;
+   // UserInfo user1;
 
-    @BeforeTest
+    @BeforeClass
     @Parameters("browser")
     public void setup(String browser){
         testLog.info("choosing web browser");
-        if(browser.equalsIgnoreCase("firefox")){
-            System.setProperty("webdriver.gecko.driver","src/test/resources/geckodriver.exe");
+        if(browser.equalsIgnoreCase("Firefox")){
+            System.setProperty("webdriver.gecko.driver","src/test/resources/geckodriver");
             driver=new FirefoxDriver();
-            testLog.info("Firefox chosed.");
+//            testLog.info("Firefox chosed.");
         } else {
-            System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
+            System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver");
             driver=new ChromeDriver();
-            testLog.info("Chrome chosed.");
+//            testLog.info("Chrome chosed.");
         }
+        testLog.info(browser+" chosed.");
 
         driver.manage().window().maximize();
-        driver.get("http://automationpractice.com/index.php");
+        driver.get(BaseConfig.Url);
         driver.manage().timeouts().pageLoadTimeout(30,TimeUnit.SECONDS);
         testLog.info("test pages launched");
     }
 
-    private void setUpUser(String id_gender, String frsname, String lstname, String eml,
-                           String psw, String dys, String mnth, String yrs, String cpn, String add1,
-                           String add2, String cty, String sta, String pstn, String other,
-                           String phn, String mbl, String als){
-        user1=new UserInfo();
-       // user1.setId_gender();
+
+
+    @Test(priority = 1)
+    public void signinTest(){
+        BaseLogger.startTestCase("SignIn Test ");
+
         String timestamp = String.valueOf(new Date().getTime());
-        String email = "hf_challenge_" + timestamp + "@hf" + timestamp.substring(7) + ".com";
+        String newemail = "hf_challenge_" + timestamp + "@hf" + timestamp.substring(7) + ".com";
 
-        user1.setFirstname(frsname);
-        user1.setLastname(lstname);
-        user1.setEmail(email);
-        user1.setPassword(psw);
-        user1.setDays(dys);
-        user1.setMonths(mnth);
-        user1.setYears(yrs);
-        user1.setCompany(cpn);
-        user1.setAddress1(add1);
-        user1.setAddress2(add2);
-        user1.setCity(cty);
-        user1.setState(sta);
-        user1.setPostcode(pstn);
-        user1.setOther(other);
-        user1.setPhone(phn);
-        user1.setPhone_mobile(mbl);
-        user1.setAlias(als);
-    }
-
-
-    @Test(priority = 1, dataProvider = "getTestData")
-    public void signinTest(String id_gender, String frsname, String lstname, String email,
-                           String psw, String dys, String mnth, String yrs, String cpn, String Add1,
-                           String add2, String cty, String sta, String pstn, String other,
-                           String phn, String mbl, String als){
-        BaseLogger.startTestCase("SignIn Test");
-
-        setUpUser(id_gender, frsname, lstname, email, psw, dys, mnth, yrs, cpn, Add1,
-                add2, cty, sta, pstn, other, phn,  mbl,  als);
 
         signInPage=new SignInPage(driver);
+        UserInfo user=new UserInfo(newemail);
 
-        WebElement heading=signInPage.signinAction(user1.getEmail(),user1);
-
+        WebElement heading=signInPage.signinAction(user);
+        welcomePage=new WelcomePage(driver);
+        System.out.println(user.getFirstname()+" "+user.getLastname() );
 
         try {
             Assert.assertEquals(heading.getText(), "MY ACCOUNT");
-            Assert.assertEquals(driver.findElement(By.className("account")).getText(), user1.getFirstname() + " " + user1.getLastname());
-            Assert.assertTrue(driver.findElement(By.className("info-account")).getText().contains("Welcome to your account."));
-            Assert.assertTrue(driver.findElement(By.className("logout")).isDisplayed());
+            BaseLogger.info("MY ACCOUNT displayed");
+            Assert.assertEquals(welcomePage.getDisplayedFullName(), user.getFirstname() + " " + user.getLastname());
+            BaseLogger.info("fullname displayed");
+            Assert.assertTrue(welcomePage.getAccountInfo().contains("Welcome to your account."));
+            BaseLogger.info("\"Welcome to you accout\" displayed");
+            Assert.assertTrue(welcomePage.isLogoutDisplayed());
             Assert.assertTrue(driver.getCurrentUrl().contains("controller=my-account"));
+            BaseLogger.info("Test Passed");
         } catch (Exception e){
             BaseLogger.error("Errors happened in signin test"+ e.getStackTrace());
         }
+        signOut();
 
-        BaseLogger.endTestCase("SignIn Test");
+        BaseLogger.endTestCase("SignIn Test ");
     }
 
-    @Test(priority = 2)
-    public void loginTest(){
+    @Test(priority = 2, dataProvider = "getTestData")
+    public void loginTest(String email, String psw, String fullName) {
 
-        String fullName = "Joe Black";
+        BaseLogger.startTestCase("Log in Test ");
+        loginPage=new LoginPage(driver);
 
-        BaseLogger.startTestCase("Log in Test");
-        LoginPage loginPage=new LoginPage(driver);
-
-        WebElement heading=loginPage.loginStep(user1.getEmail(), user1.getPassword());
-
+        WebElement heading=loginPage.loginStep(email, psw);
+        welcomePage=new WelcomePage(driver);
 
         try {
             Assert.assertEquals("MY ACCOUNT", heading.getText());
-            Assert.assertEquals(fullName, driver.findElement(By.className("account")).getText());
-            Assert.assertTrue(driver.findElement(By.className("info-account")).getText().contains("Welcome to your account."));
-            Assert.assertTrue(driver.findElement(By.className("logout")).isDisplayed());
+            BaseLogger.info("MY ACCOUNT displayed");
+            Assert.assertEquals(fullName, welcomePage.getDisplayedFullName());
+            BaseLogger.info("fullname displayed");
+            Assert.assertTrue(welcomePage.getAccountInfo().contains("Welcome to your account."));
+            BaseLogger.info("\"Welcome to you accout\" displayed");
+            Assert.assertTrue(welcomePage.isLogoutDisplayed());
             Assert.assertTrue(driver.getCurrentUrl().contains("controller=my-account"));
+            BaseLogger.info("Test Passed");
         } catch (Exception e){
             BaseLogger.error("Errors happened in Log in test"+ e.getStackTrace());
         }
 
-        BaseLogger.endTestCase("Log in Test");
+        signOut();
+        BaseLogger.endTestCase("Log in Test ");
 
     }
 
     @Test(priority = 3)
-    public void checkoutTest(){
+    public void checkoutTest() throws Exception {
         checkOutPage=new CheckOutPage(driver);
-        BaseLogger.startTestCase("CheckOutPage");
-        WebElement heading=checkOutPage.checkOutStep(user1.getEmail(),user1.getAddress1());
+        BaseLogger.startTestCase("CheckOut Test");
+        ArrayList<Object[]> userlist=new ArrayList<Object[]>();
+        userlist=ReadWriteExcel.readFromExcel(BaseConfig.ExcelFileName);
+
+        WebElement heading=checkOutPage.checkOutStep((String)userlist.get(0)[0],(String)userlist.get(0)[1]);
         try {
             Assert.assertEquals("ORDER CONFIRMATION", heading.getText());
+            BaseLogger.info("\"ORDER CONFIRMATION\" displayed");
             Assert.assertTrue(driver.findElement(By.xpath("//li[@class='step_done step_done_last four']")).isDisplayed());
+            BaseLogger.info("\"Shipping\" displayed");
             Assert.assertTrue(driver.findElement(By.xpath("//li[@id='step_end' and @class='step_current last']")).isDisplayed());
+            BaseLogger.info("\"Payment\" displayed");
             Assert.assertTrue(driver.findElement(By.xpath("//*[@class='cheque-indent']/strong")).getText().contains("Your order on My Store is complete."));
+            BaseLogger.info("\"Your order on My Store is complete.\" displayed");
             Assert.assertTrue(driver.getCurrentUrl().contains("controller=order-confirmation"));
 
         }catch (Exception e){
             BaseLogger.error("Errors happened in checkout test"+e.getStackTrace());
         }
+
+        welcomePage=new WelcomePage(driver);
+        signOut();
+        BaseLogger.endTestCase("CheckOut Test");
+    }
+
+    @AfterClass
+    public void tearDown(){
+        driver.quit();
     }
 
     @DataProvider
     public Iterator<Object[]> getTestData(){
-        String xmlfile="/src/test/java/org/naic/mfl/se/challenge/Data/UserInfo.xlsx";
+       // System.out.println();
+        //String xmlfile="src/test/java/org/naic/mfl/se/challenge/Data/UserInfo.xlsx";
         ArrayList<Object[]> testData=null;
+
         try {
-            testData=DataUtil.readFromExcel(xmlfile);
+            testData=ReadWriteExcel.readFromExcel(BaseConfig.ExcelFileName);
         } catch (Exception e) {
             e.printStackTrace();
         }
         return testData.iterator();
+    }
+
+    public void signOut(){
+        welcomePage.logoutClick();
+
     }
 }

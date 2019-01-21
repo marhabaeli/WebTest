@@ -1,0 +1,149 @@
+[INFO ] 2019-01-21 16:01:11.077 [TestNG-tests-1] TestWebPages - choosing web browser
+[INFO ] 2019-01-21 16:01:15.949 [TestNG-tests-1] TestWebPages - Chrome chosed.
+[INFO ] 2019-01-21 16:01:20.138 [TestNG-tests-1] TestWebPages - test pages launched
+[INFO ] 2019-01-21 16:01:21.201 [TestNG-tests-1] BaseLogger - *************  Log in Test   Started     ************
+[DEBUG] 2019-01-21 16:01:22.893 [TestNG-tests-1] BaseLogger - sign in button clicked
+[DEBUG] 2019-01-21 16:01:23.430 [TestNG-tests-1] BaseLogger - user email entered
+[DEBUG] 2019-01-21 16:01:23.556 [TestNG-tests-1] BaseLogger - user password entered
+[DEBUG] 2019-01-21 16:01:24.757 [TestNG-tests-1] BaseLogger - addtocart button clicked
+[INFO ] 2019-01-21 16:01:24.852 [TestNG-tests-1] BaseLogger - MY ACCOUNT displayed
+[INFO ] 2019-01-21 16:01:24.893 [TestNG-tests-1] BaseLogger - fullname displayed
+[INFO ] 2019-01-21 16:01:24.931 [TestNG-tests-1] BaseLogger - "Welcome to you accout" displayed
+[INFO ] 2019-01-21 16:01:24.975 [TestNG-tests-1] BaseLogger - Test Passed
+[INFO ] 2019-01-21 16:01:26.388 [TestNG-tests-1] BaseLogger - *****************     Log in Test  ended     ****************
+[INFO ] 2019-01-21 16:01:26.390 [TestNG-tests-1] BaseLogger - *************  Log in Test   Started     ************
+[DEBUG] 2019-01-21 16:01:27.403 [TestNG-tests-1] BaseLogger - sign in button clicked
+[DEBUG] 2019-01-21 16:01:27.676 [TestNG-tests-1] BaseLogger - user email entered
+[DEBUG] 2019-01-21 16:01:27.790 [TestNG-tests-1] BaseLogger - user password entered
+[DEBUG] 2019-01-21 16:01:28.827 [TestNG-tests-1] BaseLogger - addtocart button clicked
+[INFO ] 2019-01-21 16:01:28.901 [TestNG-tests-1] BaseLogger - MY ACCOUNT displayed
+[INFO ] 2019-01-21 16:01:28.941 [TestNG-tests-1] BaseLogger - fullname displayed
+[INFO ] 2019-01-21 16:01:28.986 [TestNG-tests-1] BaseLogger - "Welcome to you accout" displayed
+[INFO ] 2019-01-21 16:01:29.027 [TestNG-tests-1] BaseLogger - Test Passed
+[INFO ] 2019-01-21 16:01:30.492 [TestNG-tests-1] BaseLogger - *****************     Log in Test  ended     ****************
+[INFO ] 2019-01-21 16:01:30.493 [TestNG-tests-1] BaseLogger - *************  Log in Test   Started     ************
+[DEBUG] 2019-01-21 16:01:31.498 [TestNG-tests-1] BaseLogger - sign in button clicked
+[DEBUG] 2019-01-21 16:01:31.776 [TestNG-tests-1] BaseLogger - user email entered
+[DEBUG] 2019-01-21 16:01:31.877 [TestNG-tests-1] BaseLogger - user password entered
+[DEBUG] 2019-01-21 16:01:33.322 [TestNG-tests-1] BaseLogger - addtocart button clicked
+[INFO ] 2019-01-21 16:01:33.390 [TestNG-tests-1] BaseLogger - MY ACCOUNT displayed
+[INFO ] 2019-01-21 16:01:33.428 [TestNG-tests-1] BaseLogger - fullname displayed
+[INFO ] 2019-01-21 16:01:33.465 [TestNG-tests-1] BaseLogger - "Welcome to you accout" displayed
+[INFO ] 2019-01-21 16:01:33.507 [TestNG-tests-1] BaseLogger - Test Passed
+[INFO ] 2019-01-21 16:01:35.051 [TestNG-tests-1] BaseLogger - *****************     Log in Test  ended     ****************
+[INFO ] 2019-01-21 16:01:35.054 [TestNG-tests-1] BaseLogger - *************  Log in Test   Started     ************
+[DEBUG] 2019-01-21 16:01:36.224 [TestNG-tests-1] BaseLogger - sign in button clicked
+[DEBUG] 2019-01-21 16:01:36.500 [TestNG-tests-1] BaseLogger - user email entered
+[DEBUG] 2019-01-21 16:01:36.628 [TestNG-tests-1] BaseLogger - user password entered
+[DEBUG] 2019-01-21 16:01:37.821 [TestNG-tests-1] BaseLogger - addtocart button clicked
+[INFO ] 2019-01-21 16:01:37.886 [TestNG-tests-1] BaseLogger - MY ACCOUNT displayed
+[INFO ] 2019-01-21 16:01:37.918 [TestNG-tests-1] BaseLogger - fullname displayed
+[INFO ] 2019-01-21 16:01:37.948 [TestNG-tests-1] BaseLogger - "Welcome to you accout" displayed
+[INFO ] 2019-01-21 16:01:37.980 [TestNG-tests-1] BaseLogger - Test Passed
+[INFO ] 2019-01-21 16:01:39.284 [TestNG-tests-1] BaseLogger - *****************     Log in Test  ended     ****************
+[INFO ] 2019-01-21 16:30:00.917 [TestNG-tests-1] TestWebPages - choosing web browser
+[INFO ] 2019-01-21 16:30:05.076 [TestNG-tests-1] TestWebPages - Chrome chosed.
+[INFO ] 2019-01-21 16:30:08.834 [TestNG-tests-1] TestWebPages - test pages launched
+[INFO ] 2019-01-21 16:30:09.819 [TestNG-tests-1] BaseLogger - *************  Log in Test   Started     ************
+[DEBUG] 2019-01-21 16:30:11.049 [TestNG-tests-1] BaseLogger - sign in button clicked
+[DEBUG] 2019-01-21 16:30:11.466 [TestNG-tests-1] BaseLogger - user email entered
+[DEBUG] 2019-01-21 16:30:11.582 [TestNG-tests-1] BaseLogger - user password entered
+[DEBUG] 2019-01-21 16:30:12.891 [TestNG-tests-1] BaseLogger - addtocart button clicked
+[INFO ] 2019-01-21 16:30:12.988 [TestNG-tests-1] BaseLogger - MY ACCOUNT displayed
+[INFO ] 2019-01-21 16:30:13.032 [TestNG-tests-1] BaseLogger - fullname displayed
+[INFO ] 2019-01-21 16:30:13.069 [TestNG-tests-1] BaseLogger - "Welcome to you accout" displayed
+[INFO ] 2019-01-21 16:30:13.113 [TestNG-tests-1] BaseLogger - Test Passed
+[INFO ] 2019-01-21 16:30:14.325 [TestNG-tests-1] BaseLogger - *****************     Log in Test  ended     ****************
+[INFO ] 2019-01-21 16:32:11.429 [main] TestWebPages - choosing web browser
+[INFO ] 2019-01-21 16:32:15.923 [main] TestWebPages - Chrome chosed.
+[INFO ] 2019-01-21 16:32:19.473 [main] TestWebPages - test pages launched
+[INFO ] 2019-01-21 16:32:20.333 [main] BaseLogger - *************  Log in Test   Started     ************
+[DEBUG] 2019-01-21 16:32:21.666 [main] BaseLogger - sign in button clicked
+[DEBUG] 2019-01-21 16:32:22.058 [main] BaseLogger - user email entered
+[DEBUG] 2019-01-21 16:32:22.174 [main] BaseLogger - user password entered
+[DEBUG] 2019-01-21 16:32:23.555 [main] BaseLogger - addtocart button clicked
+[INFO ] 2019-01-21 16:32:23.639 [main] BaseLogger - MY ACCOUNT displayed
+[INFO ] 2019-01-21 16:32:23.685 [main] BaseLogger - fullname displayed
+[INFO ] 2019-01-21 16:32:23.720 [main] BaseLogger - "Welcome to you accout" displayed
+[INFO ] 2019-01-21 16:32:23.761 [main] BaseLogger - Test Passed
+[INFO ] 2019-01-21 16:32:25.406 [main] BaseLogger - *****************     Log in Test  ended     ****************
+[INFO ] 2019-01-21 16:32:25.553 [main] TestWebPages - choosing web browser
+[INFO ] 2019-01-21 16:32:30.805 [main] TestWebPages - Firefox chosed.
+[INFO ] 2019-01-21 16:32:35.325 [main] TestWebPages - test pages launched
+[INFO ] 2019-01-21 16:32:35.439 [main] BaseLogger - *************  Log in Test   Started     ************
+[DEBUG] 2019-01-21 16:32:37.418 [main] BaseLogger - sign in button clicked
+[DEBUG] 2019-01-21 16:32:37.670 [main] BaseLogger - user email entered
+[DEBUG] 2019-01-21 16:32:37.783 [main] BaseLogger - user password entered
+[DEBUG] 2019-01-21 16:32:39.276 [main] BaseLogger - addtocart button clicked
+[INFO ] 2019-01-21 16:32:39.417 [main] BaseLogger - MY ACCOUNT displayed
+[INFO ] 2019-01-21 16:32:39.449 [main] BaseLogger - fullname displayed
+[INFO ] 2019-01-21 16:32:39.474 [main] BaseLogger - "Welcome to you accout" displayed
+[INFO ] 2019-01-21 16:32:39.549 [main] BaseLogger - Test Passed
+[INFO ] 2019-01-21 16:32:41.312 [main] BaseLogger - *****************     Log in Test  ended     ****************
+[INFO ] 2019-01-21 16:33:51.308 [main] TestWebPages - choosing web browser
+[INFO ] 2019-01-21 16:33:55.582 [main] TestWebPages - Chrome chosed.
+[INFO ] 2019-01-21 16:33:59.273 [main] TestWebPages - test pages launched
+[INFO ] 2019-01-21 16:34:00.205 [main] BaseLogger - *************  Log in Test   Started     ************
+[DEBUG] 2019-01-21 16:34:01.387 [main] BaseLogger - sign in button clicked
+[DEBUG] 2019-01-21 16:34:01.759 [main] BaseLogger - user email entered
+[DEBUG] 2019-01-21 16:34:01.884 [main] BaseLogger - user password entered
+[DEBUG] 2019-01-21 16:34:02.998 [main] BaseLogger - addtocart button clicked
+[INFO ] 2019-01-21 16:34:03.091 [main] BaseLogger - MY ACCOUNT displayed
+[INFO ] 2019-01-21 16:34:03.135 [main] BaseLogger - fullname displayed
+[INFO ] 2019-01-21 16:34:03.170 [main] BaseLogger - "Welcome to you accout" displayed
+[INFO ] 2019-01-21 16:34:03.210 [main] BaseLogger - Test Passed
+[INFO ] 2019-01-21 16:34:05.508 [main] BaseLogger - *****************     Log in Test  ended     ****************
+[INFO ] 2019-01-21 16:34:05.519 [main] BaseLogger - *************  CheckOut Test  Started     ************
+[INFO ] 2019-01-21 16:34:06.500 [main] TestWebPages - choosing web browser
+[INFO ] 2019-01-21 16:34:11.351 [main] TestWebPages - Firefox chosed.
+[INFO ] 2019-01-21 16:34:14.557 [main] TestWebPages - test pages launched
+[INFO ] 2019-01-21 16:34:14.621 [main] BaseLogger - *************  Log in Test   Started     ************
+[DEBUG] 2019-01-21 16:34:15.976 [main] BaseLogger - sign in button clicked
+[DEBUG] 2019-01-21 16:34:16.167 [main] BaseLogger - user email entered
+[DEBUG] 2019-01-21 16:34:16.269 [main] BaseLogger - user password entered
+[DEBUG] 2019-01-21 16:34:17.770 [main] BaseLogger - addtocart button clicked
+[INFO ] 2019-01-21 16:34:17.965 [main] BaseLogger - MY ACCOUNT displayed
+[INFO ] 2019-01-21 16:34:18.005 [main] BaseLogger - fullname displayed
+[INFO ] 2019-01-21 16:34:18.033 [main] BaseLogger - "Welcome to you accout" displayed
+[INFO ] 2019-01-21 16:34:18.144 [main] BaseLogger - Test Passed
+[INFO ] 2019-01-21 16:34:19.808 [main] BaseLogger - *****************     Log in Test  ended     ****************
+[INFO ] 2019-01-21 16:34:19.812 [main] BaseLogger - *************  CheckOut Test  Started     ************
+[INFO ] 2019-01-21 16:35:56.490 [main] TestWebPages - choosing web browser
+[INFO ] 2019-01-21 16:36:00.084 [main] TestWebPages - Chrome chosed.
+[INFO ] 2019-01-21 16:36:04.259 [main] TestWebPages - test pages launched
+[INFO ] 2019-01-21 16:36:04.457 [main] BaseLogger - *************  CheckOut Test  Started     ************
+[DEBUG] 2019-01-21 16:36:06.527 [main] BaseLogger - sign in button clicked
+[DEBUG] 2019-01-21 16:36:06.880 [main] BaseLogger - user email entered
+[DEBUG] 2019-01-21 16:36:06.994 [main] BaseLogger - user password entered
+[DEBUG] 2019-01-21 16:36:08.200 [main] BaseLogger - addtocart button clicked
+[DEBUG] 2019-01-21 16:36:10.487 [main] BaseLogger - women section was clicked
+[DEBUG] 2019-01-21 16:36:11.746 [main] BaseLogger - one image was clicked
+[DEBUG] 2019-01-21 16:36:12.172 [main] BaseLogger - add to cart button clicked
+[INFO ] 2019-01-21 16:36:12.179 [main] BaseLogger - product successfully added to account's cart
+[INFO ] 2019-01-21 16:36:14.317 [main] BaseLogger - Proceed to checkout clicked
+[INFO ] 2019-01-21 16:36:14.317 [main] BaseLogger - shopping summary displayed
+[INFO ] 2019-01-21 16:36:16.400 [main] BaseLogger - account's address confirmed
+[INFO ] 2019-01-21 16:36:16.514 [main] BaseLogger - Terms of Services checked
+[INFO ] 2019-01-21 16:36:17.312 [main] BaseLogger - bank service processing...
+[INFO ] 2019-01-21 16:36:18.183 [main] BaseLogger - Bank wire chosen
+[INFO ] 2019-01-21 16:36:18.230 [main] BaseLogger - payment way confirmed
+[INFO ] 2019-01-21 16:36:19.839 [main] BaseLogger - paying process ended
+[INFO ] 2019-01-21 16:36:19.915 [main] BaseLogger - "ORDER CONFIRMATION" displayed
+[INFO ] 2019-01-21 16:36:19.951 [main] BaseLogger - "Shipping" displayed
+[INFO ] 2019-01-21 16:36:19.984 [main] BaseLogger - "Payment" displayed
+[INFO ] 2019-01-21 16:36:20.021 [main] BaseLogger - "Your order on My Store is complete." displayed
+[INFO ] 2019-01-21 16:36:21.923 [main] BaseLogger - *****************     CheckOut Test ended     ****************
+[INFO ] 2019-01-21 16:36:22.126 [main] TestWebPages - choosing web browser
+[INFO ] 2019-01-21 16:36:26.745 [main] TestWebPages - Firefox chosed.
+[INFO ] 2019-01-21 16:36:29.930 [main] TestWebPages - test pages launched
+[INFO ] 2019-01-21 16:36:29.932 [main] BaseLogger - *************  CheckOut Test  Started     ************
+[DEBUG] 2019-01-21 16:36:31.816 [main] BaseLogger - sign in button clicked
+[DEBUG] 2019-01-21 16:36:32.099 [main] BaseLogger - user email entered
+[DEBUG] 2019-01-21 16:36:32.254 [main] BaseLogger - user password entered
+[DEBUG] 2019-01-21 16:36:33.835 [main] BaseLogger - addtocart button clicked
+[DEBUG] 2019-01-21 16:36:36.373 [main] BaseLogger - women section was clicked
+[DEBUG] 2019-01-21 16:36:37.695 [main] BaseLogger - one image was clicked
+[DEBUG] 2019-01-21 16:36:38.041 [main] BaseLogger - add to cart button clicked
+[INFO ] 2019-01-21 16:36:38.041 [main] BaseLogger - product successfully added to account's cart
+[INFO ] 2019-01-21 16:36:39.071 [main] BaseLogger - Proceed to checkout clicked
+[INFO ] 2019-01-21 16:36:39.072 [main] BaseLogger - shopping summary displayed

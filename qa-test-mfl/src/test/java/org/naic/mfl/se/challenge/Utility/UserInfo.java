@@ -1,11 +1,11 @@
 package org.naic.mfl.se.challenge.Utility;
 
+import fabricator.*;
+
 public class UserInfo {
     private String id_gender;
     private String firstname;
     private String lastname;
-
-
     private String email;
     private String password;
     private String days;
@@ -16,6 +16,12 @@ public class UserInfo {
     private String address2;
     private String city;
     private String state;
+    private String postcode;
+    private String other;
+    private String phone;
+    private String phone_mobile;
+    private String alias;
+
 
     public String getId_gender() {
         return id_gender;
@@ -157,10 +163,42 @@ public class UserInfo {
         this.alias = alias;
     }
 
-    private String postcode;
-    private String other;
-    private String phone;
-    private String phone_mobile;
-    private String alias;
+    public UserInfo(){}
+
+    public UserInfo(String useremail){
+        fabricateUserInfo(useremail);
+    }
+
+
+
+    private void fabricateUserInfo(String useremail){
+        Contact contact=Fabricator.contact();
+        Alphanumeric randonNum=Fabricator.alphaNumeric();
+        Calendar calendar=Fabricator.calendar();
+        Words words=Fabricator.words();
+
+        this.setId_gender("Mr.");
+        this.setFirstname(contact.firstName());
+        this.setLastname(contact.lastName());
+        this.setEmail(useremail);
+        this.setPassword(randonNum.botify("???###"));
+
+        this.setDays(calendar.day());
+        this.setMonths(calendar.month(true));
+        this.setYears(calendar.year());
+
+        this.setCompany(contact.company());
+        this.setAddress1(contact.address());
+        this.setAddress2("");
+        this.setCity(contact.city());
+        this.setState(contact.state());
+        this.setPostcode(contact.postcode().substring(0,5));
+        this.setOther(words.sentence(5)) ;
+        this.setPhone(randonNum.numerify("##########"));
+        this.setPhone_mobile(randonNum.numerify("##########"));
+        this.setAlias(words.words(1).toString());
+
+      //  return user;
+    }
 
 }

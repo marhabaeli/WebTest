@@ -24,7 +24,7 @@ public class WebTest {
 
     @Before
     public void setUp() {
-        System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver");
         driver = new ChromeDriver();
         wait = new WebDriverWait(driver, 10, 50);
         driver.get("http://automationpractice.com/index.php");
@@ -96,6 +96,7 @@ public class WebTest {
         driver.findElement(By.id("SubmitLogin")).click();
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.linkText("Women"))).click();
         driver.findElement(By.xpath("//*[@id=\"center_column\"]/ul/li[1]/div/div[1]/div/a[1]/img")).click();
+        driver.switchTo().frame(0);
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.name("Submit"))).click();
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.linkText("Proceed to checkout"))).click();
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.linkText("Proceed to checkout"))).click();

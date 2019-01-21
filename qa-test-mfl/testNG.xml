@@ -1,20 +1,20 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
-<suite name="WebTestChallange" thread-count="2" parallel="tests" >
+<suite name="WebTestChallange">
     <listeners>
-        <listener class-name="/src/test/java/org/naic/mfl/se/challenge/scrListener/ScreenShotListener" />
+        <listener class-name="org.naic.mfl.se.challenge.Utility.ScreenShotListener"/>
         <listener class-name="org.testng.reporters.EmailableReporter" />
     </listeners>
     <test name="ChromeBrowser" >
         <parameter name="browser" value="Chrome"/>
         <classes>
-            <class name="Tests/TestWebPages" />
+            <class name="org.naic.mfl.se.challenge.Tests.TestWebPages" />
         </classes>
     </test>
 
     <test name="FireFox Browser">
        <parameter name="browser" value="Firefox"/>
         <classes>
-            <class name="Tests/TestWebPages" />
+            <class name="org.naic.mfl.se.challenge.Tests.TestWebPages" />
         </classes>
     </test>
 

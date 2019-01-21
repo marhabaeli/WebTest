@@ -1,9 +1,10 @@
 package org.naic.mfl.se.challenge.Pages;
 
-import org.naic.mfl.se.challenge.Utility.Config;
+import org.naic.mfl.se.challenge.ConfigUtil.BaseConfig;
 import org.naic.mfl.se.challenge.Utility.PageUtil;
+import org.naic.mfl.se.challenge.Utility.ReadWriteExcel;
 import org.naic.mfl.se.challenge.Utility.UserInfo;
-import org.naic.mfl.se.challenge.logger.BaseLogger;
+import org.naic.mfl.se.challenge.Utility.BaseLogger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -14,6 +15,7 @@ import org.openqa.selenium.support.ui.Select;
 public class SignInPage {
 WebDriver driver;
 PageUtil pageUtil;
+UserInfo newuser;
 
 
 @FindBy(how=How.CLASS_NAME, using ="login" )     WebElement signin;
@@ -38,9 +40,7 @@ PageUtil pageUtil;
 @FindBy(how=How.ID, using = "alias") WebElement alias;
 @FindBy(how = How.ID, using = "submitAccount") WebElement submitAccount;
 @FindBy(how=How.CSS, using = "h1") WebElement h1;
-@FindBy(how = How.CLASS_NAME, using = "account") WebElement account;
-@FindBy(how=How.CLASS_NAME, using = "info-account") WebElement info_account;
-@FindBy(how = How.CLASS_NAME, using = "logout") WebElement logout;
+
 
 public SignInPage(WebDriver driver){
     this.driver=driver;
@@ -50,7 +50,7 @@ public SignInPage(WebDriver driver){
 
 //define actions
 public void createEmail(String email){
-    pageUtil.waitForElementVisible(signin,Config.timeout);
+    pageUtil.waitForElementVisible(signin,BaseConfig.timeout);
     signin.click();
     BaseLogger.debug("sign in button clicked");
 
@@ -58,20 +58,26 @@ public void createEmail(String email){
     BaseLogger.debug("user email entered");
 
     submitcreate.click();
-    BaseLogger.debug("submit button clicked");
+    BaseLogger.debug("addtocart button clicked");
+    pageUtil.waitForElementVisible(id_gender,BaseConfig.timeout);
 }
 
 
-public void fillInfo(UserInfo user){
-    BaseLogger.info("start enter user info ");
-    pageUtil.waitForElementVisible(id_gender,Config.timeout);
+public void fillUserInfo(UserInfo user){
+
+    BaseLogger.info("entering user info started... ");
+    pageUtil.waitForElementVisible(id_gender,BaseConfig.timeout);
     id_gender.click();
     firstname.sendKeys(user.getFirstname());
     lastname.sendKeys(user.getLastname());
     password.sendKeys(user.getPassword());
     Select select=new Select(days);
     select.selectByValue(user.getDays());
+
+    select=new Select(months);
     select.selectByValue(user.getMonths());
+
+    select=new Select(years);
     select.selectByValue(user.getYears());
 
     company.sendKeys(user.getCompany());
@@ -85,22 +91,36 @@ public void fillInfo(UserInfo user){
     other.sendKeys(user.getOther());
     phone.sendKeys(user.getPhone());
     phone_mobile.sendKeys(user.getPhone_mobile());
+    alias.clear();
     alias.sendKeys(user.getAlias());
 
-    BaseLogger.info("ending enter user info");
+    BaseLogger.info("entering user info ended");
+
+    //*************
+    String projectPath=System.getProperty("user.dir");
+    System.out.println(projectPath);
+//*************
+
+    //write user info to Excel file
+    //String ExcelFileName="src/test/java/org/naic/mfl/se/challenge/Data/UserInfo.xlsx";
+    try {
+        ReadWriteExcel.write2Excel(BaseConfig.ExcelFileName, user);
+    } catch (Exception e) {
+        e.printStackTrace();
+    }
+    BaseLogger.info("user info were written to excel");
 
     submitAccount.click();
-    BaseLogger.debug("submit button clicked");
-    pageUtil.waitForElementVisible(h1,Config.timeout);
+    BaseLogger.debug("addtocart button clicked");
+    pageUtil.waitForElementVisible(h1,BaseConfig.timeout);
 
 }
 
+    public WebElement signinAction(UserInfo user){
 
-    public WebElement signinAction(String email, UserInfo user){
-
-        createEmail(email);
-        fillInfo(user);
-        pageUtil.waitForElementVisible(h1,Config.timeout);
+        createEmail(user.getEmail());
+        fillUserInfo(user);
+        pageUtil.waitForElementVisible(h1,BaseConfig.timeout);
         return (h1);
     }
 

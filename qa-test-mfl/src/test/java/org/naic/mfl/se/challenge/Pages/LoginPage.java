@@ -1,8 +1,8 @@
 package org.naic.mfl.se.challenge.Pages;
 
-import org.naic.mfl.se.challenge.Utility.Config;
+import org.naic.mfl.se.challenge.ConfigUtil.BaseConfig;
 import org.naic.mfl.se.challenge.Utility.PageUtil;
-import org.naic.mfl.se.challenge.logger.BaseLogger;
+import org.naic.mfl.se.challenge.Utility.BaseLogger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -26,7 +26,7 @@ public class LoginPage {
 
     //define action
     public WebElement loginStep(String useremail, String psw){
-        pageUtil.waitForElementVisible(singin,Config.timeout);
+        pageUtil.waitForElementVisible(singin,BaseConfig.timeout);
         singin.click();
         BaseLogger.debug("sign in button clicked");
 
@@ -35,9 +35,9 @@ public class LoginPage {
         password.sendKeys(psw);
         BaseLogger.debug("user password entered");
         submitlogin.click();
-        BaseLogger.debug("submit button clicked");
+        BaseLogger.debug("addtocart button clicked");
 
-        pageUtil.waitForElementVisible(h1,Config.timeout);
+        pageUtil.waitForElementVisible(h1,BaseConfig.timeout);
         return h1;
     }
 }
